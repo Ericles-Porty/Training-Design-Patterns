@@ -40,6 +40,13 @@ namespace Bridge.RealWorld
 
             customers.Add("Henry Velasquez");
 
+            customers.Last();
+
+            customers.Show();
+
+            customers.Last();
+
+            customers.Show();
 
             customers.ShowAll();
 
@@ -106,6 +113,10 @@ namespace Bridge.RealWorld
             _dataObject.ShowRecord();
         }
 
+        public virtual void Last()
+        {
+            _dataObject.LastRecord();
+        }
 
         public virtual void ShowAll()
         {
