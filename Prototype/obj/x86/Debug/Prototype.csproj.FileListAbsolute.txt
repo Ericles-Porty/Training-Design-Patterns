@@ -1,0 +1,8 @@
+C:\Users\admin\Desktop\PadroesProjeto c#\Prototype\bin\Debug\Prototype.exe.config
+C:\Users\admin\Desktop\PadroesProjeto c#\Prototype\bin\Debug\Prototype.exe
+C:\Users\admin\Desktop\PadroesProjeto c#\Prototype\bin\Debug\Prototype.pdb
+C:\Users\admin\Desktop\PadroesProjeto c#\Prototype\obj\x86\Debug\Prototype.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\PadroesProjeto c#\Prototype\obj\x86\Debug\Prototype.csproj.SuggestedBindingRedirects.cache
+C:\Users\admin\Desktop\PadroesProjeto c#\Prototype\obj\x86\Debug\Prototype.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\PadroesProjeto c#\Prototype\obj\x86\Debug\Prototype.exe
+C:\Users\admin\Desktop\PadroesProjeto c#\Prototype\obj\x86\Debug\Prototype.pdb
