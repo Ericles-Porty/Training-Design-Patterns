@@ -1,8 +1,0 @@
-C:\Users\admin\Desktop\PadroesProjeto c#\Builder\bin\Debug\Builder.exe.config
-C:\Users\admin\Desktop\PadroesProjeto c#\Builder\bin\Debug\Builder.exe
-C:\Users\admin\Desktop\PadroesProjeto c#\Builder\bin\Debug\Builder.pdb
-C:\Users\admin\Desktop\PadroesProjeto c#\Builder\obj\x86\Debug\Builder.csproj.AssemblyReference.cache
-C:\Users\admin\Desktop\PadroesProjeto c#\Builder\obj\x86\Debug\Builder.csproj.SuggestedBindingRedirects.cache
-C:\Users\admin\Desktop\PadroesProjeto c#\Builder\obj\x86\Debug\Builder.csproj.CoreCompileInputs.cache
-C:\Users\admin\Desktop\PadroesProjeto c#\Builder\obj\x86\Debug\Builder.exe
-C:\Users\admin\Desktop\PadroesProjeto c#\Builder\obj\x86\Debug\Builder.pdb
