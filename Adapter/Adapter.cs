@@ -2,7 +2,7 @@
 
 using System;
 
-namespace Adapter
+namespace Adapter.Structural
 {
     /// <summary>
     /// MainApp startup class for Structural
@@ -17,9 +17,9 @@ namespace Adapter
         {
             // Create adapter and place a request
 
-            Target target = new Adapter();
+            Alvo alvo = new Adapter();
 
-            target.Request();
+            alvo.Request();
 
 
             // Wait for user
@@ -30,13 +30,13 @@ namespace Adapter
 
 
     /// <summary>
-    /// The 'Target' class
+    /// The 'Alvo' class
     /// </summary>
-    internal class Target
+    internal class Alvo
     {
         public virtual void Request()
         {
-            Console.WriteLine("Called Target Request()");
+            Console.WriteLine("Called Alvo Request()");
         }
     }
 
@@ -44,7 +44,7 @@ namespace Adapter
     /// <summary>
     /// The 'Adapter' class
     /// </summary>
-    internal class Adapter : Target
+    internal class Adapter : Alvo
     {
         private readonly Adaptee _adaptee = new Adaptee();
 
