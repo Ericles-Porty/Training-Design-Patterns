@@ -159,6 +159,8 @@ namespace Bridge.RealWorld
 
         public abstract void ShowRecord();
 
+        public abstract void LastRecord();
+
         public abstract void ShowAllRecords();
     }
 
@@ -230,6 +232,14 @@ namespace Bridge.RealWorld
             foreach (string customer in _customers)
             {
                 Console.WriteLine(" " + customer);
+            }
+        }
+
+        public override void LastRecord()
+        {
+            if (_current > 0)
+            {
+                _current-=1;
             }
         }
     }
