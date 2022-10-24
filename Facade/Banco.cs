@@ -63,6 +63,16 @@ namespace Facade.RealWorld
 
             return true;
         }
+
+        public bool HasNoBadLoans(Customer c)
+        {
+            return false;
+        }
+
+        public bool HasSufficientSavings(Customer c)
+        {
+            return false;
+        }
     }
 
 
@@ -115,6 +125,20 @@ namespace Facade.RealWorld
         private readonly Credit _credit = new Credit();
         private readonly Loan _loan = new Loan();
 
+        public bool HasNoBadLoans(Customer cust)
+        {
+            return _credit.HasNoBadLoans(cust);
+        }
+
+        public bool HasSufficientSavings(Customer cust)
+        {
+            return _credit.HasSufficientSavings(cust);
+        }
+
+        public bool HasGoodCredit(Customer cust)
+        {
+            return _credit.HasGoodCredit(cust);
+        }
 
         public bool IsEligible(Customer cust, int amount)
         {
