@@ -44,6 +44,15 @@ namespace Decorator.RealWorld
 
             borrowvideo.Display();
 
+            var danificadovideo = new Danificado(video);
+
+            danificadovideo.DanificarItem("Customer @1");
+
+            danificadovideo.DanificarItem("Customer @2");
+
+
+            danificadovideo.Display();
+
 
             // Wait for user
 
@@ -205,6 +214,47 @@ namespace Decorator.RealWorld
             foreach (string borrower in borrowers)
             {
                 Console.WriteLine(" borrower: " + borrower);
+            }
+        }
+    }
+
+    internal class Danificado : Decorator
+    {
+        protected List<string> danificados = new List<string>();
+
+
+        // Constructor
+
+        public Danificado(LibraryItem libraryItem)
+            : base(libraryItem)
+        {
+        }
+
+
+        public void DanificarItem(string name)
+        {
+            danificados.Add(name);
+
+            libraryItem.NumCopies--;
+        }
+
+
+        public void ReturnItem(string name)
+        {
+            danificados.Remove(name);
+
+            libraryItem.NumCopies++;
+        }
+
+
+        public override void Display()
+        {
+            base.Display();
+
+
+            foreach (string danificado in danificados)
+            {
+                Console.WriteLine(" Danificado: " + danificado);
             }
         }
     }
