@@ -106,7 +106,6 @@ namespace Chain.RealWorld
                 Console.WriteLine("{0} approved request# {1}",
                                   GetType().Name, purchase.Number);
             }
-
             else if (successor != null)
             {
                 successor.ProcessRequest(purchase);
