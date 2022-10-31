@@ -16,7 +16,7 @@ namespace Interpreter.RealWorld
         /// </summary>
         private static void Main()
         {
-            string roman = "MCMXXVIII";
+            string roman = "MCMLXIV";
 
             var context = new Context(roman);
 
