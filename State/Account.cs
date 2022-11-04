@@ -18,6 +18,7 @@ namespace State.RealWorld
             // Open a new account
 
             var account = new Account("Jim Johnson");
+            var account2 = new Account("Éricles");
 
 
             // Apply financial transactions
@@ -34,7 +35,19 @@ namespace State.RealWorld
 
             account.Withdraw(1100.00);
 
-
+            account2.Deposit(1000);
+            account2.Deposit(1000);
+            account2.Deposit(1000);
+            account2.Deposit(1000);
+            account2.Deposit(1000);
+            account2.Deposit(1000);
+            account2.Deposit(2000);
+            account2.Deposit(2000);
+            account2.Deposit(2000);
+            account2.Deposit(2000);
+            account2.Deposit(2000);
+            account2.Deposit(2000);
+            account2.Deposit(2000);
             // Wait for user
 
             Console.ReadKey();
@@ -266,6 +279,86 @@ namespace State.RealWorld
 
             lowerLimit = 1000.0;
 
+            upperLimit = 10000.0;
+        }
+
+
+        public override void Deposit(double amount)
+        {
+            balance += amount;
+
+            StateChangeCheck();
+        }
+
+
+        public override void Withdraw(double amount)
+        {
+            balance -= amount;
+
+            StateChangeCheck();
+        }
+
+
+        public override void PayInterest()
+        {
+            balance += interest * balance;
+
+            StateChangeCheck();
+        }
+
+
+        private void StateChangeCheck()
+        {
+            if (balance < 0.0)
+            {
+                account.State = new RedState(this);
+            }
+
+            else if (balance < lowerLimit)
+            {
+                account.State = new SilverState(this);
+            }
+            else if (balance > upperLimit)
+            {
+                account.State = new DiamondState(this);
+            }
+        }
+    }
+
+    /// <summary>
+    /// A 'ConcreteState' class
+    /// <remarks>
+    /// Diamond indicates an interest bearing state
+    /// </remarks>
+    /// </summary>
+    internal class DiamondState : State
+    {
+        // Overloaded constructors
+
+        public DiamondState(State state)
+            : this(state.Balance, state.Account)
+        {
+        }
+
+
+        public DiamondState(double balance, Account account)
+        {
+            this.balance = balance;
+
+            this.account = account;
+
+            Initialize();
+        }
+
+
+        private void Initialize()
+        {
+            // Should come from a database
+
+            interest = 0.05;
+
+            lowerLimit = 1000.0;
+
             upperLimit = 10000000.0;
         }
 
@@ -288,7 +381,7 @@ namespace State.RealWorld
 
         public override void PayInterest()
         {
-            balance += interest*balance;
+            balance += interest * balance;
 
             StateChangeCheck();
         }
@@ -298,12 +391,12 @@ namespace State.RealWorld
         {
             if (balance < 0.0)
             {
-                account.State = new RedState(this);
+                account.State = new SilverState(this);
             }
 
             else if (balance < lowerLimit)
             {
-                account.State = new SilverState(this);
+                account.State = new GoldState(this);
             }
         }
     }
