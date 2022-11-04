@@ -24,17 +24,43 @@ namespace Observer.RealWorld
 
             ibm.Attach(new Investor("Dósea"));
 
+            ibm.Attach(new Investor("Eris"));
+            
+            var sinutech = new SinuTech("SinuTech", 1.00);
+
+            sinutech.Attach(new Investor("Éricles"));
+
+            sinutech.Attach(new Investor("Eris"));
+
+            sinutech.Attach(new Investor("Milena"));
+
+            sinutech.Attach(new Investor("Thiago"));
+
+            
+
 
             // Fluctuating prices will notify investors
 
             ibm.Price = 120.10;
 
+            sinutech.Price = 10.10;
+
+            sinutech.Attach(new Investor("Joanne"));
+
             ibm.Price = 121.00;
+            
+            sinutech.Price = 50.10;
 
             ibm.Price = 120.50;
 
+            sinutech.Attach(new Investor("Kendy"));
+
+
+            sinutech.Price = 100.10;
+
             ibm.Price = 120.75;
 
+            sinutech.Price = 1000.50;
 
             // Wait for user
 
@@ -128,7 +154,15 @@ namespace Observer.RealWorld
         }
     }
 
+    internal class SinuTech : Stock
+    {
+        // Constructor
 
+        public SinuTech(string symbol, double price)
+            : base(symbol, price)
+        {
+        }
+    }
     /// <summary>
     /// The 'Observer' interface
     /// </summary>
