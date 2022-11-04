@@ -46,6 +46,10 @@ namespace Strategy.RealWorld
 
             studentRecords.Sort();
 
+            studentRecords.SetSortStrategy(new RadixSort());
+
+            studentRecords.Sort();
+
 
             // Wait for user
 
@@ -104,6 +108,18 @@ namespace Strategy.RealWorld
         }
     }
 
+    /// <summary>
+    /// A 'ConcreteStrategy' class
+    /// </summary>
+    internal class RadixSort : SortStrategy
+    {
+        public override void Sort(List<string> list)
+        {
+            //list.RadixSort(); not-implemented
+
+            Console.WriteLine("RadixSort list ");
+        }
+    }
 
     /// <summary>
     /// The 'Context' class
