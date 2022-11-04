@@ -8,7 +8,7 @@ namespace Memento.RealWorld
     /// MainApp startup class for Real-World
     /// Memento Design Pattern.
     /// </summary>
-    internal class MainApp
+    public class MainApp
     {
         /// <summary>
         /// Entry point into console application.
@@ -21,6 +21,7 @@ namespace Memento.RealWorld
 
             s.Phone = "(412) 256-0990";
 
+            s.Money = 2500.0;
             s.Budget = 25000.0;
 
 
@@ -37,6 +38,7 @@ namespace Memento.RealWorld
 
             s.Phone = "(310) 209-7111";
 
+            s.Money = 1000.0;
             s.Budget = 1000000.0;
 
 
@@ -63,7 +65,7 @@ namespace Memento.RealWorld
     {
         private double _budget;
         private string _name;
-
+        private double _money;
         private string _phone;
 
 
@@ -111,6 +113,17 @@ namespace Memento.RealWorld
             }
         }
 
+        public double Money
+        {
+            get { return _money; }
+
+            set
+            {
+                _budget = value;
+
+                Console.WriteLine("Money: " + _money);
+            }
+        }
 
         // Stores memento
 
@@ -118,14 +131,14 @@ namespace Memento.RealWorld
         {
             Console.WriteLine("\nSaving state --\n");
 
-            var next = new Memento(_name, _phone, _budget);
+            var next = new Memento(_name, _phone, _budget, _money);
             atual.NextMemento = next;
             next.PreviousMemento = atual;
 
             return next;
         }
 
-        public Memento Undo(Memento atual )
+        public Memento Undo(Memento atual)
         {
             return atual.PreviousMemento;
         }
@@ -146,6 +159,8 @@ namespace Memento.RealWorld
             Phone = memento.Phone;
 
             Budget = memento.Budget;
+
+            Money = memento.Money;
         }
     }
 
@@ -157,13 +172,15 @@ namespace Memento.RealWorld
     {
         // Constructor
 
-        public Memento(string name, string phone, double budget)
+        public Memento(string name, string phone, double budget, double money)
         {
             Name = name;
 
             Phone = phone;
 
             Budget = budget;
+
+            Money = money;
         }
 
 
@@ -175,6 +192,7 @@ namespace Memento.RealWorld
         // Gets or set phone
 
         public string Phone { get; set; }
+        public double Money { get; set; }
 
 
         // Gets or sets budget
